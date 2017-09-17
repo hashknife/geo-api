@@ -1,0 +1,6 @@
+mode: atomic
+github.com/hashknife/common/logger/logger.go:14.53,21.2 6 1
+github.com/hashknife/common/logger/logger.go:30.52,34.2 1 1
+github.com/hashknife/common/logger/logger.go:37.53,38.55 1 0
+github.com/hashknife/common/logger/logger.go:41.2,41.20 1 0
+github.com/hashknife/common/logger/logger.go:38.55,40.3 1 0
