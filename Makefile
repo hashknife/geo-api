@@ -19,7 +19,7 @@ build:
 
 gen-mocks:
 	mockery -dir=./endpoints/ -all
-	mockery -dir=../common/services/ -all
+	mockery -dir=github.com/hashknife/common/services/ -all
 
 test:
 	if [ ! -d $(COVERAGEDIR) ]; then mkdir $(COVERAGEDIR); fi

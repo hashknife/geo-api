@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/briandowns/hashknife/common/models"
-	"github.com/briandowns/hashknife/geo-api/config"
-	"github.com/briandowns/hashknife/geo-api/mocks"
+	"github.com/hashknife/common/models"
+	"github.com/hashknife/geo-api/config"
+	"github.com/hashknife/geo-api/mocks"
 	"github.com/stretchr/testify/suite"
 )
 

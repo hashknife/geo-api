@@ -2,7 +2,7 @@ package mocks
 
 import "github.com/stretchr/testify/mock"
 
-import "github.com/briandowns/hashknife/common/models"
+import "github.com/hashknife/common/models"
 
 type Tile38er struct {
 	mock.Mock

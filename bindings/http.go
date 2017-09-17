@@ -6,15 +6,15 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/briandowns/hashknife/common/middleware"
-	"github.com/briandowns/hashknife/common/services"
-	"github.com/briandowns/hashknife/geo-api/config"
-	"github.com/briandowns/hashknife/geo-api/endpoints"
 	"github.com/go-kit/kit/endpoint"
 	kitlog "github.com/go-kit/kit/log"
 	kithttp "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/hashknife/common/middleware"
+	"github.com/hashknife/common/services"
+	"github.com/hashknife/geo-api/config"
+	"github.com/hashknife/geo-api/endpoints"
 )
 
 const (
