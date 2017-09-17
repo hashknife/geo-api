@@ -1,0 +1,12 @@
+mode: atomic
+github.com/hashknife/common/utils/types.go:3.31,5.2 1 0
+github.com/hashknife/common/utils/types.go:7.25,9.2 1 0
+github.com/hashknife/common/utils/types.go:11.28,13.2 1 0
+github.com/hashknife/common/utils/types.go:15.28,17.2 1 0
+github.com/hashknife/common/utils/types.go:19.28,21.2 1 0
+github.com/hashknife/common/utils/types.go:23.34,25.2 1 0
+github.com/hashknife/common/utils/types.go:27.34,29.2 1 0
+github.com/hashknife/common/utils/utils.go:9.13,11.2 1 1
+github.com/hashknife/common/utils/utils.go:17.32,19.19 2 12
+github.com/hashknife/common/utils/utils.go:22.2,22.18 1 12
+github.com/hashknife/common/utils/utils.go:19.19,21.3 1 78
