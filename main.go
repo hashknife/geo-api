@@ -10,10 +10,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/briandowns/hashknife/common/services"
-	"github.com/briandowns/hashknife/geo-api/bindings"
-	"github.com/briandowns/hashknife/geo-api/config"
 	kitlog "github.com/go-kit/kit/log"
+	"github.com/hashknife/common/services"
+	"github.com/hashknife/geo-api/bindings"
+	"github.com/hashknife/geo-api/config"
 )
 
 var gitSHA string

@@ -5,8 +5,8 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/briandowns/hashknife/common/services"
-	"github.com/briandowns/hashknife/geo-api/config"
+	"github.com/hashknife/common/services"
+	"github.com/hashknife/geo-api/config"
 )
 
 // CourierServicer
