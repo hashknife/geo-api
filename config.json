@@ -1,0 +1,10 @@
+{
+    "http_address": ":9988",
+    "healthcheck_address": ":9989",
+    "raven_auth_token": "asdfqwer1234tyui",
+    "statsd_address": "127.0.0.1:8125",
+    "statsd_reporting_interval_seconds": 5,
+    "tile38": {
+        "hostname": "localhost:9851"
+    }
+}

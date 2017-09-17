@@ -1,0 +1,53 @@
+machine:  
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  environment:
+    AWS_ACCESS_KEY_ID: 1
+    AWS_SECRET_ACCESS_KEY: 1
+    GOPATH: $HOME/gocode
+    PATH: $GOPATH/bin:$PATH
+    HASHKNIFE_PATH: $HOME/gocode/src/github.com/hashknife
+    SRC_DIR: $HASHKNIFE_PATH/geo-api
+  services:
+    - docker
+checkout:
+  post:
+    - mv "$HASHKNIFE_PATH" /tmp || echo
+    - mkdir -p "$HASHKNIFE_PATH"
+    - cp -R ~/geo-api "$SRC_DIR"
+    - mkdir -p ~/download_cache
+dependencies:
+  cache_directories:
+    - "~/download_cache"
+    - "~/gocode/bin"
+  pre:
+    - git clone --single-branch --depth 1 git@github.com:hashknife/ops ~/ops
+    - ~/ops/circle_steps/install_go ~/download_cache
+    - ~/ops/circle_steps/install_dep  ~/download_cache
+  override:
+    - type cover     || go get golang.org/x/tools/cmd/cover
+    - type goveralls || go get github.com/mattn/goveralls
+    - type gover     || go get github.com/modocache/gover
+    - cd "$SRC_DIR"  && dep ensure
+  post:
+    - mv ~/.go_workspace /tmp || echo
+    - mv ~/.gradle /tmp       || echo
+    - mv ~/.ivy2 /tmp         || echo
+    - mv ~/.m2 /tmp           || echo
+test:
+  override:
+    - cd "$SRC_DIR"  && make test
+  post:
+    - cd "$SRC_DIR" && make cover
+    - cd "$SRC_DIR" && make coveralls; echo "Coveralls Finished"
+deployment:
+  quay:
+    branch: master
+    commands:
+      - env LDFLAGS="-X main.gitSHA=$(git rev-parse HEAD)" ~/ops/docker_build.sh -p
+      - ~/ops/deploy.sh geo-api
+experimental:
+  notify:
+    branches:
+      only:
+        - master

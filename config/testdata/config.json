@@ -1,0 +1,10 @@
+{
+    "http_address": "asdf",
+    "healthcheck_address": "asdf",
+    "hashknife_auth_token": "asdf",
+    "statsd_address": "asdf",
+    "statsd_reporting_interval_seconds": 5,
+    "tile38": {
+        "hostname": "tile_38_hostname"
+    }
+}
